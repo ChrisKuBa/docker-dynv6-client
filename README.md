@@ -24,13 +24,12 @@ docker image: https://hub.docker.com/r/chriskuba/dynv6-client
 version: "0.0.1"
 service:
   dynv6-client:
-    image: hriskuba/dynv6-client
+    image: chriskuba/dynv6-client
     container-name: dynv6-client
     environment:
       - ZONE=myzone.dynv6.net
       - TOKEN=mysecuretoken
       - SLEEP=500 #optional
-      - TZ=Europe/Berlin #optional
       - INTERFACE=eth0 #optional
       - GREP="scope global dynamic" #optional
     restart: always
@@ -44,12 +43,11 @@ docker run -d \
   -e ZONE=myzone.dynv6.net \
   -e TOKEN=mysecuretoken \
   -e SLEEP=500 `#optional` \
-  -e TZ=Europe/Berlin `#optional` \
   -e INTERFACE=eth0 `#optional` \
   -e GREP="scope global dynamic" `#optional` \
   --restart always
   --network host
-  hriskuba/dynv6-client
+  chriskuba/dynv6-client
 ```
 
 ### Parameters
@@ -58,7 +56,6 @@ docker run -d \
 | -e ZONE | zone of dynvpn to update - eg. myzone.dynv6.net |
 | -e TOKEN | secure token of your dynv6 account |
 | -e SLEEP=500 | seconds between to updates |
-| -e TZ=Europe/Berlin | Timezone to use |
 | -e INTERFACE=eth0 | interface to read ip from |
 | -e GREP="scope global dynamic" | unique string to identify the correct ipv6 (if multiple exists) |
 
