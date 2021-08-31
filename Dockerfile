@@ -1,18 +1,21 @@
 ARG APLINE_VERSION=3.12.7
 ARG BUILD_FROM="alpine:${APLINE_VERSION}"
-ARG BUILD_DATE
-ARG BUILD_VERSION
 
 FROM $BUILD_FROM
 
-LABEL org.opencontainers.image.created="${BUILD_DATE}" \
+ARG BUILD_DATE
+ARG BUILD_VERSION
+ARG BUILD_REVISION
+
+LABEL org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.authors="Christian Kulbe <chriskbua@mail.de>" \
       org.opencontainers.image.url="https://hub.docker.com/r/chriskuba/dynv6-client" \
       org.opencontainers.image.documentation="https://github.com/ChrisKuBa/docker-dynv6-client/blob/main/README.md" \
       org.opencontainers.image.source="https://github.com/ChrisKuBa/docker-dynv6-client" \ 
-      org.opencontainers.image.version="${BUILD_VERSION}" \
+      org.opencontainers.image.version=$BUILD_VERSION \
       org.opencontainers.image.licenses="GPL-2.0" \
       org.opencontainers.image.title=dynv6-client \
+      org.opencontainers.image.revision=$BUILD_REVISION \
       org.opencontainers.image.description="This simple alpine docker container updates the ipv6 address of a dynv6 zone." \
       org.opencontainers.image.base.name=alpine:"${APLINE_VERSION}"
 #LABEL org.opencontainers.image.revision=""
