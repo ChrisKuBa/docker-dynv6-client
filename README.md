@@ -4,7 +4,7 @@ Field of use: IPV6 only address (with/out a public IPV4 address) with [dynv6](ht
 
 This simple alpine docker container updates the ipv6 address of a dynv6 zone.
 
-Its recommended to use a static Interface-ID (EUI-64-Identifier) if address is used for services and one or many ports must be forwared throug a firewall or router (see /etc/dhcpcd.conf slaac hwaddr).
+It is recommended using a static Interface-ID (EUI-64-Identifier) if address is used for services and one or many ports must be forward through a firewall or router (see /etc/dhcpcd.conf slaac hwaddr).
 
 The architectures supported by this image are:
 
@@ -60,6 +60,6 @@ docker run -d \
 | -e GREP="scope global dynamic" | unique string to identify the correct ipv6 (if multiple exists) |
 
 ## Known Issues
-The alpine docker image is fix to the last 1.12 version because of an dns resolving bug in newer version.
+The alpine docker image is fix to the last 1.12 version because of a dns resolving bug in newer version.
 https://github.com/alpinelinux/docker-alpine/issues/155
 https://github.com/nginxinc/docker-nginx/issues/508
