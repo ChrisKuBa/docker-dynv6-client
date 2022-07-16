@@ -2,7 +2,7 @@
 
 Field of use: IPV6 only address (with/out a public IPV4 address) with [dynv6](https://dynv6.com/).
 
-This simple alpine docker container updates the ipv6 address of a dynv6 zone.
+This simple alpine docker container updates the ipv6 address of a dynv6 zone/domain.
 
 It is recommended using a static Interface-ID (EUI-64-Identifier) if address is used for services and one or many ports must be forward through a firewall or router (see /etc/dhcpcd.conf slaac hwaddr).
 
@@ -53,7 +53,7 @@ docker run -d \
 ### Parameters
 | Parameter | Function |
 | ------ | ------ |
-| -e ZONE | zone of dynvpn to update - eg. myzone.dynv6.net |
+| -e ZONE | zone/domain of dynvpn to update - eg. myzone.dynv6.net |
 | -e TOKEN | secure token of your dynv6 account |
 | -e SLEEP=500 | seconds between to updates |
 | -e INTERFACE=eth0 | interface to read ip from |
